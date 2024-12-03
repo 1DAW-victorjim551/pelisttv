@@ -1,0 +1,46 @@
+
+.tittle {
+    background: url(media/fondo_oscuro.jpg)no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        text-align: center;
+        padding-top: 20px;
+        color: #FFF;
+} 
+
+.tabble {
+    background: url(media/fondo_oscuro.jpg)no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        text-align: center;
+        padding-top: 20px;
+        color: #FFF;
+}
+
+.audio {
+    background: url(media/fondo_oscuro.jpg)no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding-top: 20px;
+    color: #FFF;
+}
+
+.list {
+    background: url(media/fondo_oscuro.jpg)no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        padding-top: 20px;
+        color: #FFF;
+}
+
+.footer {
+        background: url(media/fondo.jpg)no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        text-align: center;
+        padding-top: 20px;
+        color: #FFF;
+    
+}
+
