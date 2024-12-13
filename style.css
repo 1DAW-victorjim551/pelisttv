@@ -129,7 +129,7 @@ p {
 
 .sau {
     padding: 30px;
-    background: url(media/mosaico.jpg);
+    background: url(Media/mosaico.jpg);
     margin-right: 60px;
     background-attachment: fixed;
     background-size: cover;
@@ -182,7 +182,7 @@ p {
 
 .about {
     padding: 30px;
-    background: url(media/mosaico.jpg);
+    background: url(Media/mosaico.jpg);
     margin-right: 60px;
     background-attachment: fixed;
     background-size: cover;
@@ -191,7 +191,7 @@ p {
 }
 
 .contact {
-    background: url(media/fondo.jpg)no-repeat;
+    background: url(Media/fondo.jpg)no-repeat;
     background-attachment: fixed;
     background-size: cover;
     text-align: center;
@@ -201,7 +201,7 @@ p {
 }  
 
 .footer {
-    background: url(media/fondo.jpg)no-repeat;
+    background: url(Media/fondo.jpg)no-repeat;
     background-attachment: fixed;
     background-size: cover;
     text-align: center;
