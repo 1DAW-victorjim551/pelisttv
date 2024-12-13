@@ -10,6 +10,18 @@ body {
     text-align: center;
     font-family: sans-serif;
 }
+.mititulo {
+    border-radius: 25px;
+    background-color: red;
+}
+
+.ultimo {
+    border-radius: 25px;
+    background-color: rgb(67, 184, 67);
+    width: fit-content;
+    font-size: 80px;
+    color: white;
+}
 
 
 .head {
@@ -21,37 +33,6 @@ body {
     position: fixed;
     width: 100;
     z-index: 100;
-}
-
-.mititulo{
-    background-color: red;
-            opacity: 80%;
-            border-radius: 25px;
-            padding: 20px;
-            width: fit-content;
-            height: fit-content; 
-            border: 3px solid black;
-}
-
-.gradientes{
-    background-image: linear-gradient(rgb(134, 164, 219), rgb(192, 88, 218));
-    width: fit-content;
-    border-radius: 25px;
-    transition: ease-in 0.3s ease-in-out 0.3s;
-}
-
-.gradientes:hover{
-    transform: scale(1.2);
-    background-image: linear-gradient(rgb(239, 188, 68), rgb(88, 223, 219));
-}
-
-.tabladatos{
-    border: white;
-    float: right;
-    background-color: white;
-}
-.datos{
-    color: rgb(245, 56, 135);
 }
 
 .navbar {
@@ -84,10 +65,6 @@ body {
     background:#3f3f3f;
 
 } 
-
-.navbar a:visited {
-    color: yellow;
-}
 
 .header{
     display: flex;
@@ -161,7 +138,7 @@ p {
 }
 .sau h2 {
     font-weight: bold;
-    color: #1cb8d3;
+    color: #e6fafd;
 }
 
 .box-container {

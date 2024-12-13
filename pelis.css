@@ -8,6 +8,19 @@
         color: #FFF;
 } 
 
+h1{
+    border-radius: 25px;
+        background-color: rgb(190, 22, 22);
+        width: fit-content;
+}
+
+.subtitulo {
+    width: fit-content;
+    color: white;
+    background-image: linear-gradient(rgb(226, 38, 38),rgb(104, 59, 163),rgb(230, 215, 89));
+    font-weight: bold;
+}
+
 .tabble {
     background: url(media/fondo_oscuro.jpg)no-repeat;
         background-attachment: fixed;
