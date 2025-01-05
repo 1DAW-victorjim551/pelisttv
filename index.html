@@ -19,7 +19,9 @@
             <a href="index.html">Inicio</a>
             <a href="Pelis.html" target="_blank">Pelis</a>
             <a href="series.html" target="_blank">Series</a>
-            <a href="#contact">Contacto</a>
+            <a href="ejemplocartelera.html" target="_blank">Cartelera</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="legal.html" target="_blank">Legal</a>
         </nav>
     </div>
 
@@ -63,24 +65,39 @@
     </section>
 
     <section class="content about">
-        <video width="640" height="360" controls>
-            <source src="Media/film_063___4K_res.mp4" type="video/mp4">
-        </video>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/nh5hRXwMXrA?si=asLXGeyIDmcrKz0l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
-
     <section id="contact" class="content contact">
         <article class="contain">
-            <h2 class="tittle">Contacto</h2>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h2 class="tittle">NEWSLETTER</h2>
             <p>
                 Si deseas publicitarte en nuestra página o deseas formar parte de nuestro personal dedicado a reseñar, no dudes en escribirnos un correo electrónico.
             </p>
-            <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=CllgCJvpbZGrzwgRxQrmrnkstDTVfHcgTgBGbZGMSgtSHNnxWBLhDtsTnsFvXsvcSZZTjxDSPTg" target="_blank" class="btn">Escríbenos un Mail</a>
-            <figure class="contacto"><img src="media/contacto.jpg" alt="contacto" style="width: 200px; height: auto;" /></figure>
+            <form action="mailto:micorreo@este.es" method="post" enctype="text/plain">
+                <p><label for="email">Escribe tu correo electrónico</label></p>
+                <input type="email" id="email" name="email" size="30"/>
+            </form>
+            <br><br><br><br>
+            <p>¿Qué novedades te interesan</p>
+            <p>
+                <input type="checkbox" id="pelis" name="pelis"/>
+                <label for="pelis">Películas</label><br/>
+                <input type="checkbox" id="series" name="series"/>
+                <label for="series">Series</label><br/>
+                <input type="checkbox" id="cartelera" name="cartelera"/>
+                <label for="cartelera">Cartelera de cine</label><br/>
+            </p>
+
+            <center>
+            <input type="submit" value="Enviar formulario">
+            </center>
         </article>
     </section>
 
-    <section class="content footer">
+    <div class="content footer">
         <footer>
+            <br><br><br><br><br><br>
             <p>PelisTTV. Todos los derechos reservados. © 2024 | Víctor Jiménez Martín</p>
             <p>pelisttv@gmail.com</p>
         </footer>

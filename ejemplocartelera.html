@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartelera - Películas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .movie {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .movie:hover {
+      transform: scale(1.05);
+    }
+
+    .movie img {
+      width: 100%;
+      height: auto;
+    }
+
+    .movie-details {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .movie-details h3 {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+
+    .movie-details p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .movie-details button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .movie-details button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Cartelera</h2>
+    <div class="movie-grid">
+      <!-- Película 1 -->
+      <div class="movie">
+        <img src="Media/anakin.avif" alt="Película 1">
+        <div class="movie-details">
+          <h3>Película 1</h3>
+          <p>Duración: 120 min</p>
+          <button>Comprar Entradas</button>
+        </div>
+      </div>
+      <!-- Película 2 -->
+      <div class="movie">
+        <img src="https://via.placeholder.com/250x350" alt="Película 2">
+        <div class="movie-details">
+          <h3>Película 2</h3>
+          <p>Duración: 140 min</p>
+          <button>Comprar Entradas</button>
+        </div>
+      </div>
+      <!-- Película 3 -->
+      <div class="movie">
+        <img src="https://via.placeholder.com/250x350" alt="Película 3">
+        <div class="movie-details">
+          <h3>Película 3</h3>
+          <p>Duración: 110 min</p>
+          <button>Comprar Entradas</button>
+        </div>
+      </div>
+      <!-- Película 4 -->
+      <div class="movie">
+        <img src="https://via.placeholder.com/250x350" alt="Película 4">
+        <div class="movie-details">
+          <h3>Película 4</h3>
+          <p>Duración: 130 min</p>
+          <button>Comprar Entradas</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

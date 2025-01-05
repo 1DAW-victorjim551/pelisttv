@@ -17,10 +17,9 @@ body {
 
 .ultimo {
     border-radius: 25px;
-    background-color: rgb(67, 184, 67);
+    background-color: rgb(150, 125, 71);
     width: fit-content;
     font-size: 80px;
-    color: white;
 }
 
 
@@ -129,8 +128,8 @@ p {
 
 .sau {
     padding: 30px;
-    background: url(Media/mosaico.jpg);
-    margin-right: 60px;
+    background: url(Media/anakin.avif);
+    margin: 0;
     background-attachment: fixed;
     background-size: cover;
     text-align: center;
@@ -182,8 +181,8 @@ p {
 
 .about {
     padding: 30px;
-    background: url(Media/mosaico.jpg);
-    margin-right: 60px;
+    background: url(Media/anakin.avif);
+    margin: 0;
     background-attachment: fixed;
     background-size: cover;
     text-align: center;
