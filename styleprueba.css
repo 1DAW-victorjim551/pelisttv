@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+.mititulo {
+    border-radius: 25px;
+    background-color: red;
+}
+
+.ultimo {
+    border-radius: 25px;
+    background-color: rgb(150, 125, 71);
+    width: fit-content;
+    font-size: 80px;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background-color: #171717;
+    position: fixed;
+    width: 100;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: #3f3f3f;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu-content a:hover {
+    background-color: #575757;
+}
+
+.submenu:hover .submenu-content {
+    display: flex;
+}
+
+.submenu2 {
+    position: relative;
+}
+
+.submenu2-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu2-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu2-content a:hover {
+    background-color: #575757;
+}
+
+.submenu2:hover .submenu2-content {
+    display: flex;
+}
+
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    height: 60vh !important;
+    background: url(media/cabecera-cine.jpg) no-repeat center;
+    font-size: 63px;
+}
+
+.tittle {
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    flex-direction: column;
+}
+
+p {
+    margin-bottom: 40px;
+    font-size: 18px;
+    padding: 0 100px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 40px;
+    border: 2px solid #9c27b0;
+    color: #FFF;
+    text-decoration: none;
+    background: #9c27b0;
+}
+
+.btn:hover {
+    background: none;
+
+}
+
+.btn-home {
+    display: flex;
+    font-size: 40px;
+}
+
+.btn-home a {
+    margin: 0 10px;
+}
+
+.content {
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.content h3 {
+    color: #1cb8d3;
+}
+
+.sau {
+    padding: 30px;
+    background: url(Media/anakin.avif);
+    margin: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding-top: 20px;
+}
+.sau h2 {
+    font-weight: bold;
+    color: #e6fafd;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.box-container .box {
+    height: 11rem;
+    width: 17rem;
+    background: #f8d2a3;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem 5rem rgba(0, 0, 0, 5);
+    margin: 2rem;
+}
+
+.box-container .box i {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #FFF;
+    background: #425272;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.box-container .box h3 {
+    font-size: 20px;
+    color: #425272;
+} 
+
+.box-container .box p {
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.about {
+    padding: 30px;
+    background: url(Media/anakin.avif);
+    margin: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.contact {
+    background: url(Media/fondo.jpg)no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+.contact p {
+    color: #FFF;
+}  
+
+.footer {
+    background: url(Media/fondo.jpg)no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding-top: 20px;
+    color:#FFF
+}
+
+
+
