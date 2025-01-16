@@ -1,96 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pelis.css">
-    <title>Series</title>
+    <title>Reseñas PelisTTV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .review-container {
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .movie-image {
+            width: 100%;
+            border-radius: 8px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .review-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: none;
+            z-index: 1000;
+            text-align: center;
+        }
+        .review-popup p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .popup-movie-image {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #333;
+        }
+        .close-button:hover {
+            color: #ff0000;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
-  
-  <section>
-    <div class="content tittle">
-    <center>
-        <h1>Series recomendadas</h1>
-        <p class="subtitulo">Listado de series hecha por PelisTTV</p>
-    </center>
-</div>
-</section>
+    <h1><center>Reseñas PelisTTV</center></h1>
 
-   
-   
-<section>
-    <div class="content tabble">
-    <center>
-            <table border="1">
-                    <tr>
-                        <td><strong>Serie</strong></td>
-                        <td><strong>Calificación</strong></td>
-                        <td><strong>Imágen</strong></td>
-                    </tr>
-
-                    <tr>
-                        <td>Breaking Bad</td>
-                        <td>9,5</td>
-                        <td><img src="Media/breaking_bad.jpg" alt="Breaking Bad" width="350px"></td>
-                    </tr>
-
-                    <tr>
-                        <td>Chernobyl</td>
-                        <td>9,3</td>
-                        <td><img src="Media/chernobyl.jpg" alt="Chernobyl" width="350px" height="250px"></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>La dimensión desconocida</td>
-                        <td>9,1</td>
-                        <td><img src="Media/dimension.jpg" alt="La dimensión desconocida" width="350px"></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sherlock</td>
-                        <td>9,1</td>
-                        <td><img src="Media/sherlock.jpg" alt="Sherlock" width="350px" height="250px"></td>
-                    </tr>
-
-
-            </table>
-    </center>
+    <div class="review-container">
+        <img src="Media/breaking_bad.jpg" alt="Portada de Breaking Bad" class="movie-image">
+        <p>Breaking Bad</p>
+        <button onclick="showReview('breakingBad')">Mostrar Reseña</button>
     </div>
-</section>
-
-<section>
-    <div class="content audio">
-    <center>
-        <hr>
-        <audio controls>
-        <source src="Media/706758__josefpres__piano-loops-135-octave-up-short-loop-120-bpm.wav" type="Audio piano">
-        </audio>
-    </center>
+    <div class="review-container">
+        <img src="Media/better_call_saul.jpg" alt="Portada de Better Call Saul" class="movie-image">
+        <p>Better Call Saul</p>
+        <button onclick="showReview('betterCallSaul')">Mostrar Reseña</button>
     </div>
-</section>
 
+    <div class="mostrar" id="mostrar" onclick="closeReview()"></div>
 
-<hr>
-<section>
-    <div class="content list">
-        <center><h2>Series más esperadas</h2></center>
-        <ul>
-            <li>Berlín</li>
-            <li>Fallout</li>
-            <li>Percy Jackson y los Dioses del Olimpo</li>
-            <li>The Walking Dead: The Ones Who Live</li>
-        </ul>
+    <div class="review-popup" id="reviewPopup">
+        <button class="close-button" onclick="closeReview()">&times;</button>
+        <p><strong>Reseña:</strong></p>
+        <img src="" alt="Escena de la película" class="popup-movie-image">
     </div>
-</section>
 
-<hr>
-<section class="content footer">
-    <footer><center><p>PelisTTV. Todos los derechos reservados. © 2024</p>
-        <p>pelisttv@gmail.com</p></center>
-    </footer>
-</section>
-</body>
-</html>
+    <script>
+        const reviews = {
+            breakingBad: {
+                text: "*Breaking Bad* es una serie de televisión que sigue a Walter White, un profesor de química que, al ser diagnosticado con cáncer terminal, comienza a fabricar metanfetaminas para asegurar el futuro de su familia. A medida que avanza la historia, Walter se adentra en el mundo del crimen y se convierte en un peligroso narcotraficante, mientras que forma una alianza con Jesse Pinkman, un joven delincuente. La serie explora la moralidad, el poder y la corrupción a través de personajes complejos y una trama llena de giros sorprendentes. Con una narrativa bien construida y actuaciones destacadas, *Breaking Bad* se ha convertido en una de las mejores series de la televisión moderna. Calificación: ★★★★★",
+                image: "Media/breaking_bad_scene.jpg"
+            },
+            betterCallSaul: {
+                text: "Better Call Saul es una serie de televisión precuela de Breaking Bad que se centra en la vida de Jimmy McGill, un abogado torpe y de buen corazón que eventualmente se transforma en Saul Goodman, el astuto y corrupto abogado criminalista de Breaking Bad. La trama sigue el viaje de Jimmy desde sus humildes comienzos como abogado en Albuquerque, New México, hasta su descenso hacia el mundo del crimen, mientras lucha por encontrar su lugar en la vida y lidiar con su hermano Chuck, quien es un abogado de prestigio, pero que desacredita su talento. La serie explora temas de ética profesional, la lucha interna entre la moralidad y la ambición, y cómo las decisiones pequeñas pueden tener consecuencias devastadoras. Además de su enfoque en Jimmy, Better Call Saul profundiza en la evolución de personajes como Mike Ehrmantraut, Gus Fring y otros personajes de Breaking Bad. La narración lenta pero meticulosa y el desarrollo de personajes es uno de sus mayores atractivos, manteniendo a los espectadores cautivados mientras se construye la historia de fondo. Calificación: ★★★★★",
+                image: "Media/better_call_saul_scene.jpg"
+            }
+        };
+
+        function showReview(reviewId) {
+            const review = reviews[reviewId];
+            if (review) {
+                const popup = document.getElementById('reviewPopup');
+                popup.querySelector('p').innerHTML = `<strong>Reseña:</strong> ${review.text}`;
+                popup.querySelector('img').src = review.image;
+                popup.style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            }
+        }
+
+        function closeReview() {
+            document.getElementById('reviewPopup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
