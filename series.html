@@ -5,6 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reseñas PelisTTV</title>
     <style>
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background-color: #171717;
+    position: fixed;
+    width: 100;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: #3f3f3f;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu-content a:hover {
+    background-color: #575757;
+}
+
+.submenu:hover .submenu-content {
+    display: flex;
+}
+
+.submenu2 {
+    position: relative;
+}
+
+.submenu2-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu2-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu2-content a:hover {
+    background-color: #575757;
+}
+
+.submenu2:hover .submenu2-content {
+    display: flex;
+}
+
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -29,7 +128,7 @@
             margin-top: 10px;
             padding: 10px 20px;
             border: none;
-            background-color: #007bff;
+            background-color: #c22cb8;
             color: white;
             font-size: 16px;
             border-radius: 5px;
@@ -37,8 +136,10 @@
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #c00d46;
         }
+
+        /*Donde se muestra la reseña una vez desplegada (posicion)*/
         .review-popup {
             position: fixed;
             top: 50%;
@@ -86,18 +187,56 @@
             display: none;
             z-index: 999;
         }
+
+        .footer {
+    background: url(Media/fondo.jpg)no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding-top: 20px;
+    color:#FFF
+}
     </style>
 </head>
 <body>
-    <h1><center>Reseñas PelisTTV</center></h1>
+</head>
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="Media/logo_pelisttv.jpg" alt="Logo" style="width: 80px; height: auto;">
+            <a href="/web definitiva/index.html"></a>
+        </div>
 
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <div class="submenu">
+                <a href="Pelis.html" target="_blank">Pelis ▾</a>
+                <div class="submenu-content">
+                    <a href="ejemplocartelera.html" target="_blank">Cartelera</a>
+                    <a href="toppelis.html" target="_blank">TOP PELIS</a>
+                </div>
+            </div>
+            <div class="submenu2">
+                <a href="series.html" target="_blank">Series ▾</a>
+                <div class="submenu2-content">
+                    <a href="topseries.html" target="_blank">TOP SERIES</a>
+                </div>
+            </div>
+            <a href="contacto.html">Contacto</a>
+            <a href="legal.html" target="_blank">Legal</a>
+        </nav>
+    </div>
+    <br><br><br>
+
+    <h1><center><u><i>Reseñas de Pelis por PelisTTV</i></u></center></h1>
+    <!-- Creamos el div para cada reseña y luego llamamos a la función por defecto que nos genera la reseña con nuestro texto e imagen y sus respectivas propiedades -->
     <div class="review-container">
-        <img src="Media/breaking_bad.jpg" alt="Portada de Breaking Bad" class="movie-image">
+        <img src="Media/breakingbad.jpg" alt="Portada de Breaking Bad" class="movie-image">
         <p>Breaking Bad</p>
         <button onclick="showReview('breakingBad')">Mostrar Reseña</button>
     </div>
     <div class="review-container">
-        <img src="Media/better_call_saul.jpg" alt="Portada de Better Call Saul" class="movie-image">
+        <img src="Media/bettercallsaulportada.jpg" alt="Portada de Better Call Saul" class="movie-image">
         <p>Better Call Saul</p>
         <button onclick="showReview('betterCallSaul')">Mostrar Reseña</button>
     </div>
@@ -107,18 +246,18 @@
     <div class="review-popup" id="reviewPopup">
         <button class="close-button" onclick="closeReview()">&times;</button>
         <p><strong>Reseña:</strong></p>
-        <img src="" alt="Escena de la película" class="popup-movie-image">
+        <img src="Media/breakingbadresena.jpg" class="popup-movie-image">
     </div>
-
+<!-- Script mencionado anteriormente -->
     <script>
         const reviews = {
             breakingBad: {
-                text: "*Breaking Bad* es una serie de televisión que sigue a Walter White, un profesor de química que, al ser diagnosticado con cáncer terminal, comienza a fabricar metanfetaminas para asegurar el futuro de su familia. A medida que avanza la historia, Walter se adentra en el mundo del crimen y se convierte en un peligroso narcotraficante, mientras que forma una alianza con Jesse Pinkman, un joven delincuente. La serie explora la moralidad, el poder y la corrupción a través de personajes complejos y una trama llena de giros sorprendentes. Con una narrativa bien construida y actuaciones destacadas, *Breaking Bad* se ha convertido en una de las mejores series de la televisión moderna. Calificación: ★★★★★",
-                image: "Media/breaking_bad_scene.jpg"
+                text: "Breaking Bad es una serie de televisión que sigue a Walter White, un profesor de química que, al ser diagnosticado con cáncer terminal, comienza a fabricar metanfetaminas para asegurar el futuro de su familia. A medida que avanza la historia, Walter se adentra en el mundo del crimen y se convierte en un peligroso narcotraficante, mientras que forma una alianza con Jesse Pinkman, un joven delincuente. La serie explora la moralidad, el poder y la corrupción a través de personajes complejos y una trama llena de giros sorprendentes. Con una narrativa bien construida y actuaciones destacadas, Breaking Bad se ha convertido en una de las mejores series de la televisión moderna.",
+                image: "Media/breakingbadresena.jpg"
             },
             betterCallSaul: {
-                text: "Better Call Saul es una serie de televisión precuela de Breaking Bad que se centra en la vida de Jimmy McGill, un abogado torpe y de buen corazón que eventualmente se transforma en Saul Goodman, el astuto y corrupto abogado criminalista de Breaking Bad. La trama sigue el viaje de Jimmy desde sus humildes comienzos como abogado en Albuquerque, New México, hasta su descenso hacia el mundo del crimen, mientras lucha por encontrar su lugar en la vida y lidiar con su hermano Chuck, quien es un abogado de prestigio, pero que desacredita su talento. La serie explora temas de ética profesional, la lucha interna entre la moralidad y la ambición, y cómo las decisiones pequeñas pueden tener consecuencias devastadoras. Además de su enfoque en Jimmy, Better Call Saul profundiza en la evolución de personajes como Mike Ehrmantraut, Gus Fring y otros personajes de Breaking Bad. La narración lenta pero meticulosa y el desarrollo de personajes es uno de sus mayores atractivos, manteniendo a los espectadores cautivados mientras se construye la historia de fondo. Calificación: ★★★★★",
-                image: "Media/better_call_saul_scene.jpg"
+                text: "Better Call Saul es una serie de televisión precuela de Breaking Bad que se centra en la vida de Jimmy McGill, un abogado torpe y de buen corazón que eventualmente se transforma en Saul Goodman, el astuto y corrupto abogado criminalista de Breaking Bad. La trama sigue el viaje de Jimmy desde sus humildes comienzos como abogado en Albuquerque, New México, hasta su descenso hacia el mundo del crimen, mientras lucha por encontrar su lugar en la vida y lidiar con su hermano Chuck, quien es un abogado de prestigio, pero que desacredita su talento. La serie explora temas de ética profesional, la lucha interna entre la moralidad y la ambición, y cómo las decisiones pequeñas pueden tener consecuencias devastadoras. Además de su enfoque en Jimmy, Better Call Saul profundiza en la evolución de personajes como Mike Ehrmantraut, Gus Fring y otros personajes de Breaking Bad. La narración lenta pero meticulosa y el desarrollo de personajes es uno de sus mayores atractivos, manteniendo a los espectadores cautivados mientras se construye la historia de fondo.",
+                image: "Media/better-call-saul.webp"
             }
         };
 
@@ -138,5 +277,12 @@
             document.getElementById('overlay').style.display = 'none';
         }
     </script>
+
+<div class="content footer">
+    <footer>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p><b>PelisTTV. Todos los derechos reservados. © 2024 | Víctor Jiménez Martín</b></p>
+        <p><b>pelisttv@gmail.com</b></p>
+    </footer>
 </body>
 </html>

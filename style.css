@@ -129,7 +129,7 @@ body {
 
 .header {
     height: 60vh !important;
-    background: url(media/cabecera-cine.jpg) no-repeat center;
+    background: url(media/cabecera-cine.jpg) no-repeat center; /*Añadimos una imagen como fondo*/
     font-size: 63px;
 }
 
@@ -270,6 +270,7 @@ p {
     border-radius: 40px;
     width: fit-content;
     height: fit-content;
+    margin-top: 150px;
 }
 
 .formulario-amarillo{
@@ -292,6 +293,7 @@ p {
     color:#FFF
 }
 
+/*Hemos hecho responsive nuestra página con la etiqueta media para tablets o teléfonos móviles*/
 @media (max-width: 768px) {
     .head {
         flex-direction: column;

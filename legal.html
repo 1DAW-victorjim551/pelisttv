@@ -4,8 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal PelisTTV</title>
+    <style>
+        *{
+            background: url(Media/fondo_contacto.jpg) no-repeat;
+        }
+
+        .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background-color: #171717;
+    position: fixed;
+    width: 100;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: #3f3f3f;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu-content a:hover {
+    background-color: #575757;
+}
+
+.submenu:hover .submenu-content {
+    display: flex;
+}
+
+.submenu2 {
+    position: relative;
+}
+
+.submenu2-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu2-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu2-content a:hover {
+    background-color: #575757;
+}
+
+.submenu2:hover .submenu2-content {
+    display: flex;
+}
+
+        #caja3 {
+            background-color: #942ab4;
+            color: #ffffff;
+            height: fit-content;
+            width: fit-content;
+            position: relative;
+            animation: animaciontres 4s infinite;
+        }
+        @keyframes animaciontres {
+            0% { color: rgb(106, 47, 168); left: 0px; top: 0px; }
+            25% { color: yellow; left: 200px; top: 0px; }
+            50% { color: blue; left: 200px; top: 200px; }
+            75% { color: green; left: 0px; top: 200px; }
+            100% { color: red; left: 0px; top: 0px; }
+        }
+    </style>
 </head>
 <body>
-    <p>En construcción</p>
+    <div class="head">
+        <div class="logo">
+            <img src="Media/logo_pelisttv.jpg" alt="Logo" style="width: 80px; height: auto;">
+            <a href="/web definitiva/index.html"></a>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <div class="submenu">
+                <a href="Pelis.html" target="_blank">Pelis ▾</a>
+                <div class="submenu-content">
+                    <a href="ejemplocartelera.html" target="_blank">Cartelera</a>
+                    <a href="toppelis.html" target="_blank">TOP PELIS</a>
+                </div>
+            </div>
+            <div class="submenu2">
+                <a href="series.html" target="_blank">Series ▾</a>
+                <div class="submenu2-content">
+                    <a href="topseries.html" target="_blank">TOP SERIES</a>
+                </div>
+            </div>
+            <a href="contacto.html">Contacto</a>
+            <a href="legal.html" target="_blank">Legal</a>
+        </nav>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <div id="caja3">
+        <p>Próximamente...</p>
+    </div>
 </body>
 </html>

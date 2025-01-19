@@ -3,8 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartelera de Reseñas</title>
+    <title>Reseñas PelisTTV</title>
     <style>
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background-color: #171717;
+    position: fixed;
+    width: 100;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: #3f3f3f;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu-content a:hover {
+    background-color: #575757;
+}
+
+.submenu:hover .submenu-content {
+    display: flex;
+}
+
+.submenu2 {
+    position: relative;
+}
+
+.submenu2-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu2-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu2-content a:hover {
+    background-color: #575757;
+}
+
+.submenu2:hover .submenu2-content {
+    display: flex;
+}
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -29,7 +127,7 @@
             margin-top: 10px;
             padding: 10px 20px;
             border: none;
-            background-color: #007bff;
+            background-color: #c22cb8;
             color: white;
             font-size: 16px;
             border-radius: 5px;
@@ -37,8 +135,10 @@
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #c00d46;
         }
+
+        /*Establecemos una posición donde se localiza la reseña una vez desplegada*/
         .review-popup {
             position: fixed;
             top: 50%;
@@ -66,7 +166,7 @@
         .close-button {
             position: absolute;
             top: 10px;
-            right: 10px; /* Ahora en la esquina superior derecha */
+            right: 10px;
             background: none;
             border: none;
             font-size: 18px;
@@ -76,6 +176,8 @@
         .close-button:hover {
             color: #ff0000;
         }
+
+        /*Como se muestra el Overlay*/
         .overlay {
             position: fixed;
             top: 0;
@@ -86,34 +188,87 @@
             display: none;
             z-index: 999;
         }
+
+        .footer {
+    background: url(Media/fondo.jpg)no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding-top: 20px;
+    color:#FFF
+}
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Cartelera de Reseñas</h1>
+    <div class="head">
+        <div class="logo">
+            <img src="Media/logo_pelisttv.jpg" alt="Logo" style="width: 80px; height: auto;">
+            <a href="/web definitiva/index.html"></a>
+        </div>
 
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <div class="submenu">
+                <a href="Pelis.html" target="_blank">Pelis ▾</a>
+                <div class="submenu-content">
+                    <a href="ejemplocartelera.html" target="_blank">Cartelera</a>
+                    <a href="toppelis.html" target="_blank">TOP PELIS</a>
+                </div>
+            </div>
+            <div class="submenu2">
+                <a href="series.html" target="_blank">Series ▾</a>
+                <div class="submenu2-content">
+                    <a href="topseries.html" target="_blank">TOP SERIES</a>
+                </div>
+            </div>
+            <a href="contacto.html">Contacto</a>
+            <a href="legal.html" target="_blank">Legal</a>
+        </nav>
+    </div>
+    <br><br><br>
+    <h1><center><u><i>Reseñas de Pelis por PelisTTV</i></u></center></h1>
+
+<!-- Creamos el div para cada reseña y luego llamamos a la función por defecto que nos genera la reseña con nuestro texto e imagen y sus respectivas propiedades -->
     <div class="review-container">
-        <img src="Media/breaking_bad.jpg" alt="Portada de la película" class="movie-image">
-        <p><center>Breaking Bad</center></p>
-        <button onclick="showReview()">Mostrar Reseña</button>
+        <img src="Media/clubluchaportada.jpg" alt="Portada del Club de la lucha" class="movie-image">
+        <p><center>El club de la lucha</center></p>
+        <button onclick="showReview('clublucha')">Mostrar Reseña</button>
     </div>
     <div class="review-container">
-        <img src="Media/breaking_bad.jpg" alt="Portada de la película" class="movie-image">
-        <p><center>Breaking Bad</center></p>
-        <button onclick="showReview()">Mostrar Reseña</button>
+        <img src="Media/shutterislandportada.jpg" alt="Portada de Shutter Island" class="movie-image">
+        <p>Shutter Island</p>
+        <button onclick="showReview('shutterisland')">Mostrar Reseña</button>
     </div>
 
-    <div class="overlay" id="overlay" onclick="closeReview()"></div>
+    <div class="mostrar" id="mostrar" onclick="closeReview()"></div>
 
     <div class="review-popup" id="reviewPopup">
         <button class="close-button" onclick="closeReview()">&times;</button>
-        <p><strong>Reseña:</strong> Esta película tiene una narrativa cautivadora y actuaciones memorables que no te dejarán indiferente. Una experiencia cinematográfica única.</p>
-        <img src="https://via.placeholder.com/300x200" alt="Escena de la película" class="popup-movie-image">
+        <p><strong>Reseña:</strong></p>
+        <img src="Media/clublucharesena.jpg" class="popup-movie-image">
     </div>
 
+    <!-- El Script anteriormente mencionado -->
     <script>
-        function showReview() {
-            document.getElementById('reviewPopup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
+        const reviews = {
+            clublucha: {
+                text: "El Club de la Lucha es una película de 1999 dirigida por David Fincher y protagonizada por Brad Pitt, Edward Norton y Helena Bonham Carter. La trama sigue a un hombre insomne que forma un club secreto de lucha como forma de escapar de su monótona vida. A través de su asociación con el carismático Tyler Durden, el protagonista se sumerge en un mundo de caos, anarquía y auto-descubrimiento, explorando temas de identidad y la alienación moderna. Es conocida por sus giros argumentales, su crítica social y su estilo visual único.",
+                image: "Media/clublucharesena.jpg"
+            },
+            shutterisland: {
+                text: "Shutter Island es una película dirigida por Martin Scorsese y protagonizada por Leonardo DiCaprio, Mark Ruffalo y Ben Kingsley. La historia sigue a dos agentes federales que investigan la desaparición de una paciente en un hospital psiquiátrico ubicado en una remota isla. Mientras intentan desentrañar el misterio, descubren que nada es lo que parece, y se enfrentan a una serie de revelaciones perturbadoras. La película destaca por su atmósfera tensa y su giro final impactante.",
+                image: "Media/shutterislandresena.jpg"
+            }
+        };
+        function showReview(reviewId) {
+            const review = reviews[reviewId];
+            if (review) {
+                const popup = document.getElementById('reviewPopup');
+                popup.querySelector('p').innerHTML = `<strong>Reseña:</strong> ${review.text}`;
+                popup.querySelector('img').src = review.image;
+                popup.style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            }
         }
 
         function closeReview() {
@@ -121,5 +276,12 @@
             document.getElementById('overlay').style.display = 'none';
         }
     </script>
+
+<div class="content footer">
+    <footer>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p><b>PelisTTV. Todos los derechos reservados. © 2024 | Víctor Jiménez Martín</b></p>
+        <p><b>pelisttv@gmail.com</b></p>
+    </footer>
 </body>
 </html>

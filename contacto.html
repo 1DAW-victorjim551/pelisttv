@@ -5,6 +5,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto PelisTTV</title>
 </head>
+<style>
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background-color: #171717;
+    position: fixed;
+    width: 100;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: #3f3f3f;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu-content a:hover {
+    background-color: #575757;
+}
+
+.submenu:hover .submenu-content {
+    display: flex;
+}
+
+.submenu2 {
+    position: relative;
+}
+
+.submenu2-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu2-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu2-content a:hover {
+    background-color: #575757;
+}
+
+.submenu2:hover .submenu2-content {
+    display: flex;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 40px;
+    border: 2px solid #9c27b0;
+    color: #FFF;
+    text-decoration: none;
+    background: #9c27b0;
+}
+
+.btn:hover{
+    background: #da8cdf;
+}
+
+.contacto-fondo{
+    background: url(Media/fondo_contacto.jpg) no-repeat;
+}
+
+.tittle-contact{
+    border-radius: 35px;
+    background-color: #cc69de;
+    width: fit-content;
+    height: fit-content;
+}
+
+.btn:active{
+    color: yellow;
+}
+
+.btn:visited{
+    color: green;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #4CAF50; /* Cambia el color del borde */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Agrega una sombra */
+}
+
+p:first-of-type {
+    font-weight: bold; /* Hace que el primer párrafo de un elemento padre sea en negrita */
+}
+
+
+.footer {
+    background: url(Media/fondo.jpg)no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding-top: 20px;
+    color:#FFF
+}
+
+    /*Hemos hecho responsive nuestra página con la etiqueta media para tablets o teléfonos móviles*/
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .header {
+        height: 50vh;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .box {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .head {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        height: 40vh;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .box {
+        padding: 15px;
+    }
+
+}
+
+</style>
 <body>
     <div class="head">
         <div class="logo">
@@ -14,21 +216,101 @@
 
         <nav class="navbar">
             <a href="index.html">Inicio</a>
-            <a href="Pelis.html" target="_blank">Pelis</a>
-            <a href="series.html" target="_blank">Series</a>
-            <a href="contacto.html" target="_blank">Contacto</a>
+            <div class="submenu">
+                <a href="Pelis.html" target="_blank">Pelis ▾</a>
+                <div class="submenu-content">
+                    <a href="ejemplocartelera.html" target="_blank">Cartelera</a>
+                    <a href="toppelis.html" target="_blank">TOP PELIS</a>
+                </div>
+            </div>
+            <div class="submenu2">
+                <a href="series.html" target="_blank">Series ▾</a>
+                <div class="submenu2-content">
+                    <a href="topseries.html" target="_blank">TOP SERIES</a>
+                </div>
+            </div>
+            <a href="contacto.html">Contacto</a>
+            <a href="legal.html" target="_blank">Legal</a>
         </nav>
     </div>
 
+    <br><br><br<br><br><br>
+
+    <div class="contacto-fondo">
+
     <section id="contact" class="content contact">
         <article class="contain">
-            <h2 class="tittle">CONTACTO</h2>
-            <p>
+            <center>
+            <h2 class="tittle-contact" style="font-size: 60px;">CONTACTO</h2>
+            <p style="font-size: 20px;">
                 Si deseas publicitarte en nuestra página o deseas formar parte de nuestro personal dedicado a reseñar, no dudes en escribirnos un correo electrónico.
             </p>
             <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=CllgCJvpbZGrzwgRxQrmrnkstDTVfHcgTgBGbZGMSgtSHNnxWBLhDtsTnsFvXsvcSZZTjxDSPTg" target="_blank" class="btn">Escríbenos un Mail</a>
             <figure class="contacto"><img src="media/contacto.jpg" alt="contacto" style="width: 200px; height: auto;" /></figure>
+        </center>
         </article>
     </section>
+    <h3>¿Tienes alguna sugerencia para PelisTTV? | ¡Te escuchamos!</h3>
+    <br>
+        <div class="radio">
+        <p style="font-size: 18px;">¿Qué página de nuestro sitio mejorarías?</p> 
+        <p>
+            <input type="radio" id="pelis" name="so" value="pelis" checked="checked"/>
+            <label for="pelis">Pelis</label>
+            <input type="radio" id="series" name="so" value="series"/>
+            <label for="series">Series</label>
+            <input type="radio" id="toppelis" name="so" value="toppelis"/>
+            <label for="toppelis">Top Pelis / Top Series</label>
+            <input type="radio" id="cartelera" name="so" value="cartelera"/>
+            <label>Cartelera</label>
+        </p>
+        </div>
+
+        <div class="multiple">
+        <p style="font-size: 18px;">¿Qué páginas de nuestro sitio sueles frecuentar</p>
+        <p>
+            <input type="checkbox" id="pelis" name="pelis"/>
+            <label for="pelis">Pelis</label><br/>
+            <input type="checkbox" id="series" name="series"/>
+            <label for="series">Series</label><br/>
+            <input type="checkbox" id="toppelis" name="toppelis"/>
+            <label for="toppelis">Top Pelis / Top Series</label><br/>
+            <input type="checkbox" id="cartelera" name="cartelera"/>
+            <label for="cartelera">Cartelera</label><br/>
+        </p>
+        </div>
+
+        <div class="lineas">
+        <p style="font-size: 18px;"><label for="comentario">¡Escribe alguna sugerencia para seguir ampliando nuestro sitio en un futuro!</label></p>
+        <p>
+            <textarea id="comentario" name="comentario" rows="3" cols="40"></textarea>
+        </p>
+        </div>
+
+        <div class="desplegable">
+        <p style="font-size: 18px;"><label for="estudios">¿Recomendarías PelisTTV a un amigo?</label></p>
+        <select id="estudios" name="estudios">
+            <option>Sí, la recomendaría completamente</option>
+            <option>Paso tiempo en el portal pero tiene cosas a mejorar</option>
+            <option>Uso el portal ocasionalmente para informarme sobre nuevos estrenos o alguna reseña</option>
+            <option>No me ha gustado PelisTTV</option>
+        </select>
+        
+        </div>
+        <div class="botones">
+        <center>
+            <h3><mark>¡Gracias por contestar!</mark></h3>
+        <input type="submit" value="Enviar formulario">
+        </center>
+        <br>
+        </div>
+    </form>
+    </div>
+    <div class="content footer">
+        <footer>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <p><b>PelisTTV. Todos los derechos reservados. © 2024 | Víctor Jiménez Martín</b></p>
+            <p><b>pelisttv@gmail.com</b></p>
+        </footer>
 </body>
 </html>

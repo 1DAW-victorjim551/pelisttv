@@ -3,11 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pelis.css">
+    <link rel="stylesheet" href="toppelis.css">
     <title>Pelis</title>
+    <style>
+        .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background-color: #171717;
+    position: fixed;
+    width: 100;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: #3f3f3f;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu-content a:hover {
+    background-color: #575757;
+}
+
+.submenu:hover .submenu-content {
+    display: flex;
+}
+
+.submenu2 {
+    position: relative;
+}
+
+.submenu2-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu2-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu2-content a:hover {
+    background-color: #575757;
+}
+
+.submenu2:hover .submenu2-content {
+    display: flex;
+}
+    </style>
 </head>
 <body>
-  
+</head>
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="Media/logo_pelisttv.jpg" alt="Logo" style="width: 80px; height: auto;">
+            <a href="/web definitiva/index.html"></a>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <div class="submenu">
+                <a href="Pelis.html" target="_blank">Pelis ▾</a>
+                <div class="submenu-content">
+                    <a href="ejemplocartelera.html" target="_blank">Cartelera</a>
+                    <a href="toppelis.html" target="_blank">TOP PELIS</a>
+                </div>
+            </div>
+            <div class="submenu2">
+                <a href="series.html" target="_blank">Series ▾</a>
+                <div class="submenu2-content">
+                    <a href="topseries.html" target="_blank">TOP SERIES</a>
+                </div>
+            </div>
+            <a href="contacto.html">Contacto</a>
+            <a href="legal.html" target="_blank">Legal</a>
+        </nav>
+    </div>
+    <br><br><br>
+
   <section>
     <div class="content tittle">
     <center>
@@ -30,27 +157,27 @@
                     </tr>
 
                     <tr>
-                        <td>Shutter Island</td>
-                        <td>8,2</td>
-                        <td><img src="Media/shutter_island.jpg" alt="Shutter Island" width="350px"></td>
+                        <td><b>Shutter Islan</b>d</td>
+                        <td><center>8,6</center></td>
+                        <td><img src="Media/shutterislandportada.jpg" alt="Shutter Island" width="350px"></td>
                     </tr>
 
                     <tr>
-                        <td>Oppenheimer</td>
-                        <td>8,4</td>
-                        <td><img src="Media/belkaa-photographer-HAOFRacF5K0-unsplash.jpg" alt="Oppenheimer" width="350px" height="250px"></td>
+                        <td><b>Oppenheimer</b></td>
+                        <td><center>8,4</center></td>
+                        <td><img src="Media/oppenheimer_portada.webp" alt="Oppenheimer" width="350px" height="250px"></td>
                     </tr>
                     
                     <tr>
-                        <td>El silencio de los corderos</td>
-                        <td>8,6</td>
-                        <td><img src="Media/andy-li-A6eYZTmKIjM-unsplash.jpg" alt="El silencio de los corderos" width="350px"></td>
+                        <td><b>El silencio de los corderos</b></td>
+                        <td><center>8,6</center></td>
+                        <td><img src="Media/silenciodeloscorderos_portada.jpg" alt="El silencio de los corderos" width="350px" height="270px"></td>
                     </tr>
 
                     <tr>
-                        <td>La vida es bella</td>
-                        <td>8,6</td>
-                        <td><img src="Media/auschwitz-1066516_1280.jpg" alt="La vida es bella" width="350px" height="250px"></td>
+                        <td><b>La vida es bella</b></td>
+                        <td><center>8,4</center></td>
+                        <td><img src="Media/lavidaesbella_portada.jpg" alt="La vida es bella" width="350px" height="250px"></td>
                     </tr>
 
 
@@ -59,41 +186,8 @@
     </div>
 </section>
 
-<section>
-    <div class="content audio">
-    <center>
-        <hr>
-        <audio controls>
-        <source src="/pelisttv/Media/706758__josefpres__piano-loops-135-octave-up-short-loop-120-bpm.wav" type="Audio piano">
-        </audio>
-    </center>
-    </div>
-</section>
-
-
-<hr>
-<section>
-    <div class="content list">
-        <center><h2>Pelis en cartelera</h2></center>
-        <ul>
-            <li>Wonka</li>
-            <li>Napoleón</li>
-            <li>Digimon Adventures</li>
-            <li>Los Juegos Del Hambre: Balada De Pájaros Cantores Y Serpientes</li>
-        </ul>
-        <center><h2>Pelis en cartelera mejor recibidas</h2></center>
-        <ol>
-            <li>Napoleón</li>
-            <li>Los Juegos Del Hambre: Balada De Pájaros Cantores Y Serpientes</li>
-            <li>Wonka</li>
-            <li>Digimon Adventures</li>
-        </ol>
-    </div>
-</section>
-
-<hr>
 <section class="content footer">
-    <footer><center><p>PelisTTV. Todos los derechos reservados. © 2024</p>
+    <footer><center><p>PelisTTV. Todos los derechos reservados. © 2024-2025</p>
         <p>pelisttv@gmail.com</p></center>
     </footer>
 </section>

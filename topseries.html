@@ -3,11 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pelis.css">
+    <link rel="stylesheet" href="toppelis.css">
     <title>Series</title>
+    <style>
+        .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background-color: #171717;
+    position: fixed;
+    width: 100;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: #3f3f3f;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu-content a:hover {
+    background-color: #575757;
+}
+
+.submenu:hover .submenu-content {
+    display: flex;
+}
+
+.submenu2 {
+    position: relative;
+}
+
+.submenu2-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu2-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu2-content a:hover {
+    background-color: #575757;
+}
+
+.submenu2:hover .submenu2-content {
+    display: flex;
+}
+    </style>
 </head>
 <body>
-  
+</head>
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="Media/logo_pelisttv.jpg" alt="Logo" style="width: 80px; height: auto;">
+            <a href="/web definitiva/index.html"></a>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <div class="submenu">
+                <a href="Pelis.html" target="_blank">Pelis ▾</a>
+                <div class="submenu-content">
+                    <a href="ejemplocartelera.html" target="_blank">Cartelera</a>
+                    <a href="toppelis.html" target="_blank">TOP PELIS</a>
+                </div>
+            </div>
+            <div class="submenu2">
+                <a href="series.html" target="_blank">Series ▾</a>
+                <div class="submenu2-content">
+                    <a href="topseries.html" target="_blank">TOP SERIES</a>
+                </div>
+            </div>
+            <a href="contacto.html">Contacto</a>
+            <a href="legal.html" target="_blank">Legal</a>
+        </nav>
+    </div>
+    <br><br><br>
+
   <section>
     <div class="content tittle">
     <center>
@@ -16,8 +143,6 @@
     </center>
 </div>
 </section>
-
-   
    
 <section>
     <div class="content tabble">
@@ -30,27 +155,27 @@
                     </tr>
 
                     <tr>
-                        <td>Breaking Bad</td>
-                        <td>9,5</td>
-                        <td><img src="Media/breaking_bad.jpg" alt="Breaking Bad" width="350px"></td>
+                        <td><b>Breaking Bad</b></td>
+                        <td><center>9,5</center></td>
+                        <td><img src="Media/breakingbad.jpg" alt="Breaking Bad" width="350px"></td>
                     </tr>
 
                     <tr>
-                        <td>Chernobyl</td>
-                        <td>9,3</td>
-                        <td><img src="Media/chernobyl.jpg" alt="Chernobyl" width="350px" height="250px"></td>
+                        <td><b>Chernobyl</b></td>
+                        <td><center>9,3</center></td>
+                        <td><img src="Media/chernobyl_portada.jpg" alt="Chernobyl" width="350px" height="250px"></td>
                     </tr>
                     
                     <tr>
-                        <td>La dimensión desconocida</td>
-                        <td>9,1</td>
-                        <td><img src="Media/dimension.jpg" alt="La dimensión desconocida" width="350px"></td>
+                        <td><b>Lost</b></td>
+                        <td><center>9,1</center></td>
+                        <td><img src="Media/lost_portada.jpeg" alt="La dimensión desconocida" width="350px"></td>
                     </tr>
 
                     <tr>
-                        <td>Sherlock</td>
-                        <td>9,1</td>
-                        <td><img src="Media/sherlock.jpg" alt="Sherlock" width="350px" height="250px"></td>
+                        <td><b>Severance</b></td>
+                        <td><center>9,1</center></td>
+                        <td><img src="Media/severance_portada.webp" alt="Sherlock" width="350px" height="200px"></td>
                     </tr>
 
 
@@ -59,35 +184,9 @@
     </div>
 </section>
 
-<section>
-    <div class="content audio">
-    <center>
-        <hr>
-        <audio controls>
-        <source src="Media/706758__josefpres__piano-loops-135-octave-up-short-loop-120-bpm.wav" type="Audio piano">
-        </audio>
-    </center>
-    </div>
-</section>
-
-
-<hr>
-<section>
-    <div class="content list">
-        <center><h2>Series más esperadas</h2></center>
-        <ul>
-            <li>Berlín</li>
-            <li>Fallout</li>
-            <li>Percy Jackson y los Dioses del Olimpo</li>
-            <li>The Walking Dead: The Ones Who Live</li>
-        </ul>
-    </div>
-</section>
-
-<hr>
 <section class="content footer">
-    <footer><center><p>PelisTTV. Todos los derechos reservados. © 2024</p>
-        <p>pelisttv@gmail.com</p></center>
+    <footer><center><p><b>PelisTTV. Todos los derechos reservados. © 2024-2025</b></p>
+        <p><b>pelisttv@gmail.com</b></p></center>
     </footer>
 </section>
 </body>

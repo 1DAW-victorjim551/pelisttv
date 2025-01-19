@@ -6,6 +6,61 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>PelisTTV</title>
+    <style>
+        /* Estilo del botón */
+        button {
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+    
+        /* Contenedor de la imagen */
+        .image-container {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0.9);
+          background-color: rgba(0, 0, 0, 0.8);
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+    
+          /* Ocultar por defecto */
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+    
+        /* Estado visible */
+        .image-container.show {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(-50%, -50%) scale(1);
+        }
+    
+        /* Imagen dentro del contenedor */
+        .image-container img {
+          max-width: 100%;
+          max-height: 80vh;
+          border-radius: 5px;
+        }
+    
+        /* Botón de cierre ("X") */
+        .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: red;
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          font-size: 16px;
+          line-height: 30px;
+          cursor: pointer;
+        }
+      </style>
 </head>
 
 <body>
@@ -44,6 +99,13 @@
             <a href="Pelis.html" target="_blank" class="btn">Pelis</a>
             <a href="series.html" target="_blank" class="btn">Series</a>
         </div>
+        <button id="showImageBtn">¡Mapa Web!</button>
+
+        <div class="image-container" id="imageContainer">
+            <button class="close-btn" id="closeBtn">X</button>
+            <img src="Media/1.png" alt="Imagen">
+        </div>
+
     </header>
 
     <section class="content sau">
@@ -77,49 +139,71 @@
     <section class="content about">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/nh5hRXwMXrA?si=asLXGeyIDmcrKz0l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
+
     <section id="contact" class="content contact">
         <article class="contain">
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <div class="capsula_formulario">
-            <h2 class="tittle-newsletter"><center>NEWSLETTER</center></h2>
-            <br><br>
-            <p>
-                Si deseas publicitarte en nuestra página o deseas formar parte de nuestro personal dedicado a reseñar, no dudes en escribirnos un correo electrónico.
-            </p>
-            <div class="formulario-amarillo">
-            <form action="mailto:micorreo@este.es" method="post" enctype="text/plain">
+                <h2 class="tittle-newsletter"><center>NEWSLETTER</center></h2>
                 <br>
-                <p><label for="email">Escribe tu correo electrónico</label></p>
-                <input type="email" id="email" name="email" size="30"/>
-            </form>
-            <br><br><br><br>
-            <p>¿Qué novedades te interesan</p>
-            <p>
-                <input type="checkbox" id="pelis" name="pelis"/>
-                <label for="pelis">Películas</label><br/>
-                <input type="checkbox" id="series" name="series"/>
-                <label for="series">Series</label><br/>
-                <input type="checkbox" id="cartelera" name="cartelera"/>
-                <label for="cartelera">Cartelera de cine</label><br/>
-            </p>
-
-            <center>
-            <input type="submit" value="Enviar formulario">
-            </center>
-            <br>
-        </div>
+                <p>
+                    ¡Alistate en nuestra Newsletter para enterarte de las últimas reseñas!.
+                </p>
+                <div class="formulario-amarillo">
+                    <form action="mailto:micorreo@este.es" method="post" enctype="text/plain">
+                        <br>
+                        <p>
+                            <label for="email"><b>Escribe tu correo electrónico</b></label>
+                        </p>
+                        <input type="email" id="email" name="email" size="30" required />
+                        
+                        <br><br><br><br>
+                        <p><b>¿Qué novedades te interesan?</b></p>
+                        <p>
+                            <input type="checkbox" id="pelis" name="novedades" value="Películas" />
+                            <label for="pelis">Películas</label><br />
+                            
+                            <input type="checkbox" id="series" name="novedades" value="Series" />
+                            <label for="series">Series</label><br />
+                            
+                            <input type="checkbox" id="cartelera" name="novedades" value="Cartelera de cine" />
+                            <label for="cartelera">Cartelera de cine</label><br />
+                        </p>
+                        
+                        <br>
+                        <div style="border-radius: 90px;">
+                        <center>
+                            <input type="submit" value="Enviar formulario" />
+                        </center>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </article>
-    </div>
     </section>
 
     <div class="content footer">
         <footer>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <p>PelisTTV. Todos los derechos reservados. © 2024 | Víctor Jiménez Martín</p>
-            <p>pelisttv@gmail.com</p>
+            <br><br><br><br><br>
+            <p><b>PelisTTV. Todos los derechos reservados. © 2024 | Víctor Jiménez Martín</b></p>
+            <p><b>pelisttv@gmail.com</b></p>
         </footer>
-    </section>
+    </div>
+
+    <script>
+        // Obtener elementos para mi mapa web
+        const showImageBtn = document.getElementById('showImageBtn');
+        const imageContainer = document.getElementById('imageContainer');
+        const closeBtn = document.getElementById('closeBtn');
+    
+        // Mostrar el contenedor de la imagen con efecto de zoom para desplegar el mapa web
+        showImageBtn.addEventListener('click', () => {
+          imageContainer.classList.add('show');
+        });
+    
+        // Cierre de la ventana al darle click al botón de "X"
+        closeBtn.addEventListener('click', () => {
+          imageContainer.classList.remove('show');
+        });
+    </script>
 </body>
 </html>
-
-
